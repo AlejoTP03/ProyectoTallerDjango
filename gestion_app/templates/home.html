@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenido al Concesionario</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa; /* Color de fondo suave */
+            color: #343a40; /* Color de texto */
+            margin: 0;
+            padding: 20px;
+            text-align: center; /* Centrar texto */
+        }
+
+        h1 {
+            color: #007bff; /* Color azul para el título */
+            font-size: 2.5em; /* Tamaño de fuente mayor */
+            margin-bottom: 20px; /* Espacio inferior del título */
+        }
+
+        p {
+            font-size: 1.2em; /* Tamaño de fuente estándar para párrafos */
+            margin-bottom: 40px; /* Espacio inferior de los párrafos */
+        }
+
+        .container {
+            max-width: 800px; /* Ancho máximo del contenedor */
+            margin: 0 auto; /* Centrar el contenedor */
+            padding: 20px;
+            background-color: #ffffff; /* Fondo blanco para el contenedor */
+            border-radius: 8px; /* Bordes redondeados */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra suave */
+        }
+
+        .link-button {
+            display: inline-block; /* Para que el enlace tenga padding */
+            margin: 15px; /* Margen entre botones */
+            padding: 15px 30px; /* Espaciado interno */
+            font-size: 1.2em; /* Tamaño de fuente mayor para botones */
+            color: white; /* Texto blanco */
+            background-color: #007bff; /* Fondo azul */
+            border-radius: 5px; /* Bordes redondeados */
+            text-decoration: none; /* Sin subrayado */
+            transition: background-color 0.3s ease; /* Transición suave para el fondo */
+        }
+
+        .link-button:hover {
+            background-color: #0056b3; /* Color más oscuro al pasar el mouse */
+        }
+
+        footer {
+            margin-top: 40px; /* Margen superior para el pie de página */
+            font-size: 0.9em; /* Tamaño de fuente menor para el pie de página */
+            color: #6c757d; /* Color gris para el pie de página */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Bienvenido al Concesionario</h1>
+        <p>Seleccione una de las opciones a continuación para continuar:</p>
+        <a href="{% url 'mecanico_list' %}" class="link-button">Mecánicos</a>
+        <a href="{% url 'propietario_list' %}" class="link-button">Propietarios</a>
+        <a href="{% url 'carros_list' %}" class="link-button">Carros</a>
+    </div>
+
+    <footer>
+        &copy; {{ 2024 }} Todos los derechos reservados.
+    </footer>
+
+</body>
+</html>

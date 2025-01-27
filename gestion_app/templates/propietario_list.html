@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propietarios</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff; /* Color de fondo suave */
+            color: #333; /* Color de texto */
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #007bff; /* Color azul para el título */
+            text-align: center;
+        }
+
+        a {
+            color: #007bff; /* Color azul para los enlaces */
+            text-decoration: none; /* Sin subrayado */
+        }
+
+        a:hover {
+            text-decoration: underline; /* Subrayado al pasar el mouse */
+        }
+
+        ul {
+            list-style-type: none; /* Sin viñetas */
+            padding: 0;
+        }
+
+        li {
+            background-color: #ffffff; /* Fondo blanco para cada elemento */
+            border: 1px solid #007bff; /* Borde azul */
+            border-radius: 5px; /* Bordes redondeados */
+            padding: 10px;
+            margin: 10px 0;
+            display: flex;
+            justify-content: space-between; /* Espacio entre texto y enlaces */
+        }
+
+        li a {
+            margin-left: 10px; /* Espacio entre el nombre y los enlaces */
+        }
+
+        .nuevo-propietario {
+            display: block;
+            text-align: center;
+            margin: 20px 0;
+            padding: 10px;
+            background-color: #007bff; /* Fondo azul para el botón */
+            color: white; /* Texto blanco */
+            border-radius: 5px; /* Bordes redondeados */
+            text-decoration: none; /* Sin subrayado */
+        }
+
+        .nuevo-propietario:hover {
+            background-color: #0056b3; /* Color más oscuro al pasar el mouse */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Propietarios</h1>
+    <a class="nuevo-propietario" href="{% url 'propietario_create' %}">Nuevo Propietario</a>
+    <ul>
+        {% for propietario in propietarios %}
+            <li>{{ propietario.nombre }} {{ propietario.apellido }} 
+                <div>
+                    <a href="{% url 'propietario_update' propietario.pk %}">Editar</a>
+                    <a href="{% url 'propietario_delete' propietario.pk %}">Eliminar</a>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="home.html">Atras</a>
+</body>
+</html>

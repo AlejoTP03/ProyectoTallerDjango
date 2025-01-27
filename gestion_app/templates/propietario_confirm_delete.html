@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eliminar PRopietario</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff; /* Color de fondo suave */
+            color: #333; /* Color de texto */
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #dc3545; /* Color rojo para el título de eliminación */
+            text-align: center;
+            margin-bottom: 20px; /* Espacio inferior del título */
+        }
+
+        form {
+            max-width: 600px; /* Ancho máximo del formulario */
+            margin: 0 auto; /* Centrar el formulario */
+            padding: 30px; /* Padding interno mayor */
+            background-color: #ffffff; /* Fondo blanco para el formulario */
+            border: 1px solid #dc3545; /* Borde rojo */
+            border-radius: 10px; /* Bordes redondeados */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+        }
+
+        p {
+            text-align: center; /* Centrar el texto */
+            margin-bottom: 20px; /* Espacio inferior del texto */
+            font-size: 18px; /* Tamaño de fuente mayor para el mensaje */
+        }
+
+        button {
+            background-color: #dc3545; /* Fondo rojo para el botón */
+            color: white; /* Texto blanco */
+            border: none; /* Sin borde */
+            border-radius: 5px; /* Bordes redondeados */
+            padding: 10px 15px; /* Espaciado interno */
+            cursor: pointer; /* Cambiar cursor al pasar el mouse */
+            font-size: 16px; /* Tamaño de fuente */
+            width: 100%; /* Botón de ancho completo */
+        }
+
+        button:hover {
+            background-color: #c82333; /* Color más oscuro al pasar el mouse */
+        }
+
+
+        a {
+            display: inline-block; /* Para que el enlace tenga padding */
+            margin-top: 20px; /* Espacio superior */
+            text-align: center;
+            color: #007bff; /* Color azul para el enlace */
+            text-decoration: none; /* Sin subrayado */
+        }
+
+        a:hover {
+            text-decoration: underline; /* Subrayado al pasar el mouse */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Eliminar Propietario</h1>
+    <p>¿Estás seguro de que deseas eliminar a {{ propietario.nombre }} {{ propietario.apellido }}?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Eliminar</button>
+    </form>
+    <a href="{% url 'propietario_list' %}">Cancelar</a>
+
+</body>
+</html>
